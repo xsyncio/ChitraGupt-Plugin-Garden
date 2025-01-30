@@ -1,0 +1,11 @@
+{
+    "title": "Announcements",
+    "description": "Announcements from the team",
+    "items": [
+        {
+            "title": "Announcement 1",
+            "description": "Description of announcement 1",
+            "url": "https://example.com/announcement1"
+        }
+    ]
+}

@@ -16,12 +16,13 @@ import chitragupt.abc.generic as abc_generic
 # Create the plugin instance.
 osint_url_extractor: plugin_mod.ChitraguptPlugin = plugin_mod.ChitraguptPlugin(
     name="osint_url_extractor",
-    description="Extracts URLs from a text file for OSINT purposes."
+    description="Extracts URLs from a text file for OSINT purposes.",
 )
+
 
 @osint_url_extractor.register(
     command_name="extract-urls",
-    filename=plugin_mod.DataType.STRING  # Use the DataType enum member.
+    filename=abc_generic.DataType.STRING,  # Use the DataType enum member.
 )
 def extract_urls_command(
     framework: typing.Any,
@@ -73,6 +74,7 @@ def extract_urls_command(
             message=f"Error extracting URLs from '{filename}': {e}",
             log_type=plugin_mod.LogType.ERROR,
         )
+
 
 def load(framework: typing.Any, cmd_str: str) -> None:
     """

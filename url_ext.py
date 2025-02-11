@@ -12,6 +12,7 @@ import typing
 
 import chitragupt.core.plugin as plugin_mod
 import chitragupt.abc.generic as abc_generic
+import chitragupt.core.logger as logger
 
 # Create the plugin instance.
 osint_url_extractor: plugin_mod.ChitraguptPlugin = plugin_mod.ChitraguptPlugin(
@@ -62,17 +63,17 @@ def extract_urls_command(
         if urls:
             framework.logger.log(
                 message=f"Extracted URLs from '{filename}': {urls}",
-                log_type=plugin_mod.LogType.INFO,
+                log_type=logger.LogType.INFO,
             )
         else:
             framework.logger.log(
                 message=f"No URLs found in '{filename}'.",
-                log_type=plugin_mod.LogType.INFO,
+                log_type=logger.LogType.INFO,
             )
     except Exception as e:
         framework.logger.log(
             message=f"Error extracting URLs from '{filename}': {e}",
-            log_type=plugin_mod.LogType.ERROR,
+            log_type=logger.LogType.ERROR,
         )
 
 
